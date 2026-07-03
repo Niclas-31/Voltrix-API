@@ -1,0 +1,5 @@
+{
+  "itemGroup.voltrix_api": "Example Mod Tab",
+  "block.voltrix_api.example_block": "Example Block",
+  "item.voltrix_api.example_item": "Example Item"
+}
