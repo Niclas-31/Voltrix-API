@@ -8,5 +8,7 @@ public interface IEnergyStorage {
 
     long getEnergyStored();
 
+    void setEnergy(long energy);
+
     long getCapacity();
 }

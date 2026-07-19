@@ -1,4 +1,4 @@
-package de.niclasl.voltrix_api.energy.cable;
+package de.niclasl.voltrix_api.energy;
 
 import net.minecraft.util.StringRepresentable;
 import org.jspecify.annotations.NonNull;

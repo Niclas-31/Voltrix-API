@@ -1,4 +1,4 @@
-package de.niclasl.voltrix_api.energy.cable;
+package de.niclasl.voltrix_api.energy;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.util.StringRepresentable;

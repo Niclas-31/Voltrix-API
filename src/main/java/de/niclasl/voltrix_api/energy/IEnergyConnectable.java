@@ -1,4 +1,4 @@
-package de.niclasl.voltrix_api.energy.cable;
+package de.niclasl.voltrix_api.energy;
 
 import net.minecraft.core.Direction;
 
@@ -8,7 +8,5 @@ public interface IEnergyConnectable {
 
     void setConnectionMode(Direction direction, ConnectionMode connectionMode);
 
-    default boolean canConnect(Direction direction) {
-        return getConnectionMode(direction).canConnect();
-    }
+    void cycleConnectionMode(Direction direction);
 }
