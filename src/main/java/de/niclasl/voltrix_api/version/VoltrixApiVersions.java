@@ -11,8 +11,6 @@ import java.util.Map;
 public class VoltrixApiVersions {
     private static final Map<Integer, ApiVersionHolder> HOLDERS = new HashMap<>();
 
-    private static ApiVersion latest;
-
     static {
         try {
             reloadFromResources();
@@ -27,8 +25,6 @@ public class VoltrixApiVersions {
         }
 
         HOLDERS.clear();
-
-        latest = file.getLatest();
 
         for (ApiMajorVersion major : file.getMajors()) {
 
@@ -57,10 +53,6 @@ public class VoltrixApiVersions {
         } catch (Exception e) {
             throw new RuntimeException("Failed loading API versions", e);
         }
-    }
-
-    public static ApiVersion latest() {
-        return latest;
     }
 
     public static ApiVersionHolder getHolder(int major) {
