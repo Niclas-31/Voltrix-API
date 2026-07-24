@@ -1,13 +1,13 @@
 {
   "latest": {
     "major": 1,
-    "minor": 1
+    "minor": 0
   },
   "majors": [
     {
       "major": 1,
       "status": "SUPPORTED",
-      "minors": [0, 1]
+      "minors": [0]
     }
   ]
 }
