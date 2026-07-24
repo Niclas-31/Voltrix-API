@@ -7,7 +7,7 @@
     {
       "major": 1,
       "status": "SUPPORTED",
-      "minors": [0, 1]
+      "minors": [0]
     }
   ]
 }
