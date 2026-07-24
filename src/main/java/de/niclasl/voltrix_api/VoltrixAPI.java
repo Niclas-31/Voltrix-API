@@ -11,6 +11,8 @@ public class VoltrixAPI {
 
     private static Function<Long, IEnergyStorage> storageFactory;
 
+    public static final ApiVersion API_VERSION = new ApiVersion(1, 0);
+
     public VoltrixAPI() {
     }
 
