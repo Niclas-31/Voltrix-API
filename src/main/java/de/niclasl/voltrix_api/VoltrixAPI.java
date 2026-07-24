@@ -1,6 +1,7 @@
 package de.niclasl.voltrix_api;
 
 import de.niclasl.voltrix_api.energy.IEnergyStorage;
+import de.niclasl.voltrix_api.version.ApiVersion;
 import net.neoforged.fml.common.Mod;
 
 import java.util.function.Function;

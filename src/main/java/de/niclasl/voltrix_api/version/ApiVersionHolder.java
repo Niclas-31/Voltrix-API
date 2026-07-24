@@ -1,4 +1,4 @@
-package de.niclasl.voltrix_api;
+package de.niclasl.voltrix_api.version;
 
 import java.util.Set;
 
