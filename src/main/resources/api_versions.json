@@ -3,10 +3,11 @@
     "major": 1,
     "minor": 0
   },
-  "versions": [
+  "majors": [
     {
       "major": 1,
-      "minor": 0
+      "status": "SUPPORTED",
+      "minors": [0, 1]
     }
   ]
 }
