@@ -5,13 +5,13 @@ import java.util.List;
 public class ApiVersionsFile {
 
     private ApiVersion latest;
-    private List<ApiVersion> versions;
+    private List<ApiMajorVersion> majors;
 
     public ApiVersion getLatest() {
         return latest;
     }
 
-    public List<ApiVersion> getVersions() {
-        return versions;
+    public List<ApiMajorVersion> getMajors() {
+        return majors;
     }
 }

@@ -5,19 +5,25 @@ import java.util.Set;
 public final class ApiVersionHolder {
 
     private final int major;
-    private final Set<Integer> minorVersions;
+    private final ApiSupportStatus status;
+    private final Set<Integer> minors;
 
-    public ApiVersionHolder(int major, Set<Integer> versions) {
+    public ApiVersionHolder(int major, ApiSupportStatus status, Set<Integer> minors) {
         this.major = major;
-        this.minorVersions = versions;
+        this.status = status;
+        this.minors = minors;
+    }
+
+    public int major() {
+        return major;
+    }
+
+    public ApiSupportStatus status() {
+        return status;
     }
 
     public boolean exists(ApiVersion version) {
-
-        if (version.major() != major) {
-            return false;
-        }
-
-        return minorVersions.contains(version.minor());
+        return version.major() == major
+                && minors.contains(version.minor());
     }
 }

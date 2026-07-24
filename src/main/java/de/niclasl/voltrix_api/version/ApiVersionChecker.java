@@ -35,11 +35,11 @@ public final class ApiVersionChecker {
 
                 if (VoltrixAPI.API_VERSION.isOlderThan(online)) {
 
-                    logger.warn(
-                            "A new Voltrix API version is available: {} -> {}",
-                            VoltrixAPI.API_VERSION,
-                            online
-                    );
+                    logger.warn("================================================");
+                    logger.warn("A new Voltrix API version is available!");
+                    logger.warn("{} -> {}", VoltrixAPI.API_VERSION, online);
+                    logger.warn("Please update Voltrix API.");
+                    logger.warn("================================================");
                 } else {
                     logger.info("Voltrix API is up to date.");
                 }

@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 public class VoltrixApiVersions {
     private static final Map<Integer, ApiVersionHolder> HOLDERS = new HashMap<>();
@@ -27,30 +26,21 @@ public class VoltrixApiVersions {
             throw new RuntimeException("ApiVersionsFile is null");
         }
 
-        if (file.getVersions() == null) {
-            throw new RuntimeException("ApiVersionsFile versions is null");
-        }
-
         HOLDERS.clear();
 
         latest = file.getLatest();
 
-        Map<Integer, Set<Integer>> map = new HashMap<>();
+        for (ApiMajorVersion major : file.getMajors()) {
 
-        for (ApiVersion version : file.getVersions()) {
-
-            map.computeIfAbsent(
-                    version.major(),
-                    _ -> new HashSet<>()
-            ).add(version.minor());
+            HOLDERS.put(
+                    major.major(),
+                    new ApiVersionHolder(
+                            major.major(),
+                            major.status(),
+                            new HashSet<>(major.minors())
+                    )
+            );
         }
-
-        map.forEach((major, minors) ->
-                HOLDERS.put(
-                        major,
-                        new ApiVersionHolder(major, minors)
-                )
-        );
     }
 
     public static void reloadFromResources() {
@@ -62,10 +52,6 @@ public class VoltrixApiVersions {
             Gson gson = new Gson();
 
             ApiVersionsFile file = gson.fromJson(new InputStreamReader(stream), ApiVersionsFile.class);
-
-            if (file.getVersions() == null) {
-                throw new RuntimeException("api_versions.json contains no versions");
-            }
 
             reload(file);
         } catch (Exception e) {
